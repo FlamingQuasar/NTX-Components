@@ -1,0 +1,98 @@
+ntx-ranges{
+	display:block;
+	width:260px;
+}
+
+ntx-range{
+	cursor: default;
+    display: flex;
+    height: 50px;
+    user-select: none;
+}
+
+.mob ntx-range {
+	flex-flow: column;	
+}
+
+.mob ntx-range range-line{
+	margin-left: 20px;
+}
+
+.mob ntx-range range-title{
+	padding-top:18px;
+	margin-left: 30px;
+}
+
+ntx-range range-title{
+    display: block;
+    font-variant: all-small-caps;
+    user-select: none;
+}
+
+ntx-range speed-display{
+    width:33px;
+}
+
+ntx-range speed-display{
+    margin-left: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+ntx-range speed-display:after{
+	content:"%";
+}
+
+ntx-range speed-display:hover{
+	color:black;
+}
+
+ntx-range speed-display:focus{
+	outline:none;
+}
+
+ntx-range range-line{
+    background-color: darkgrey;
+    border-radius: 10px;
+    border: 2px solid ghostwhite;
+    box-shadow: 1px 1px 3px;
+    display: inline-flex;
+    height: 8px;
+    margin-bottom: 11px;
+    margin-left: 174px;
+    margin-right: 6px;
+	position:absolute;
+    width: 270px;
+	z-index:1;
+}
+
+ntx-range range-line pre-line{
+    background: linear-gradient(45deg, yellow, red);
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: inset 2px 1px slategrey;
+    height: 6px;
+	position:absolute;
+	width: 170px;
+	z-index: -1;
+}
+
+ntx-range range-bar{
+    background: linear-gradient(137deg, ghostwhite, dimgrey);
+    box-shadow: 2px 2px 5px;
+    border: 2px solid slategrey;
+    border-radius: 50px;
+    display: block;
+    height: 16px;
+    margin-left: -1px;
+    margin-top: -7px;
+    width: 16px;
+}
+
+ntx-range range-bar.active,
+ntx-range range-bar:hover{
+    background: linear-gradient(137deg, yellow, red);
+    border: 2px solid darkgrey;
+	height:18px;
+    margin-top: -8px;
+	width:18px;
+}

@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="ntx-view/range.css">
+		<script src="ntx-view/control.js"></script>
+		<script src="ntx-view/range.js"></script>
+		<script>
+			let initRanger = ()=>{
+				let detectMobile = ()=>{
+					const toMatch  = [
+						/Android/i,
+						/webOS/i,
+						/iPhone/i,
+						/iPad/i,
+						/iPod/,
+						/BlackBerry/i,
+						/Windows Phone/i
+					];
+					return toMatch.some((toMatchItem) => {
+						return navigator.userAgent.match(toMatchItem);
+					});
+				}
+				let cnt = document.querySelector("ntx-ranges");
+				
+				let isMobile = detectMobile();
+				if(isMobile) cnt.classList.add("mob");
+				//Сохранения тепла, 
+				let rngWarmSave = new Range({title:"Сохранение тепла", isMobile:isMobile});
+				//Защита от жары, 
+				let rngHeatProtector = new Range({title:"Защита от жары", isMobile:isMobile});
+				//Защита от шума,
+				let rngNoiseProtector = new Range({title:"Защита от шума", isMobile:isMobile}); 
+				//Безопасность, 
+				let rngProtection = new Range({title:"Безопасность", isMobile:isMobile}); 
+				//Дизайн
+				let rngDesign = new Range({title:"Дизайн", isMobile:isMobile}); 
+				rngWarmSave.render(cnt);
+				rngHeatProtector.render(cnt);
+				rngNoiseProtector.render(cnt);
+				rngProtection.render(cnt);
+				rngDesign.render(cnt);
+			}
+			addEventListener("DOMContentLoaded", initRanger);
+		</script>
+	</head>
+	<body><ntx-ranges></ntx-ranges></body>
+</html>
